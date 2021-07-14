@@ -26,7 +26,7 @@ class Order(models.Model):
     total_price = models.FloatField("Total price of order")
     add_date = models.DateField(auto_now_add=True)
     edit_date = models.DateField(auto_now=True)
-    status = models.CharField("Order status", choices=statuses)
+    status = models.CharField("Order status", choices=statuses, max_length=100)
 
 
 class OrderDetail(models.Model):
@@ -36,7 +36,7 @@ class OrderDetail(models.Model):
 
 
 class Day(models.Model):
-    day = models.DateField(format="%d-%m-%Y")
+    day = models.DateField()
     order_details = models.ForeignKey(OrderDetail, on_delete=models.DO_NOTHING)
 
 
