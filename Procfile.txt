@@ -1,1 +1,1 @@
-web: gunicorn naTV.wsgi
+web: gunicorn natv.wsgi
