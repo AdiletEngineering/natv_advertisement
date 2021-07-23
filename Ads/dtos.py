@@ -8,5 +8,3 @@ class ChannelDto:
         self.image = image
         self.price = price
         self.discounts = discounts
-
-# class jjfj
