@@ -4,7 +4,7 @@ from .models import Channel, Order, OrderDetail, Discount, Day, Price
 
 
 class ChannelAdmin(admin.ModelAdmin):
-    list_display = ['name', 'photo', 'active', 'order_num']
+    list_display = ['name', 'image', 'active', 'order_num']
 
 class OrderAdmin(admin.ModelAdmin):
     list_display = ['text', 'client_name', 'client_phone', 'client_email', 'total_price', 'add_date', 'edit_date', 'status']
@@ -19,7 +19,7 @@ class DiscountAdmin(admin.ModelAdmin):
     list_display = ['channels', 'percent', 'start_date', 'end_date', 'min_days']
 
 class PriceAdmin(admin.ModelAdmin):
-    list_display = ['channels', 'start_date', 'end_date', 'price']
+    list_display = ['channels', 'start_date', 'end_date', 'price_per_symbol']
 
 admin.site.register(Channel, ChannelAdmin)
 admin.site.register(Order, OrderAdmin)

@@ -7,9 +7,12 @@ from django.db import models
 
 class Channel(models.Model):
     name = models.CharField("Название канала", max_length=20)
-    photo = models.CharField("Ссылка на фотографию канала", max_length=200)
+    image = models.CharField("Ссылка на фотографию канала", max_length=200)
     active = models.BooleanField("Статус канала", default=True)
     order_num = models.IntegerField("Приоритет канала")
+
+    def __str__(self):
+        return self.name
 
 
 statuses = (
@@ -27,6 +30,9 @@ class Order(models.Model):
     add_date = models.DateField(auto_now_add=True)
     edit_date = models.DateField(auto_now=True)
     status = models.CharField("Order status", choices=statuses, max_length=100)
+
+    def __str__(self):
+        return self.text
 
 
 class OrderDetail(models.Model):
@@ -52,5 +58,5 @@ class Price(models.Model):
     channels = models.ForeignKey(Channel, on_delete=models.DO_NOTHING)
     start_date = models.DateField(auto_now_add=True)
     end_date = models.DateField(default=datetime(2999, 12, 31))
-    price = models.FloatField("Цена одного символа на определенном канале")
+    price_per_symbol = models.FloatField("Цена одного символа на определенном канале")
 
