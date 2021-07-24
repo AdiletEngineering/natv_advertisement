@@ -5,6 +5,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from .dtos import get_dto
 from .models import Channel, Discount
 from .serializers import ChannelSerializer, DiscountSerializer
 
@@ -13,8 +14,10 @@ from .serializers import ChannelSerializer, DiscountSerializer
 def channel_list(request):
     if request.method == 'GET':
         channels = Channel.objects.all()
-        serializer = ChannelSerializer(channels, many=True)
+        dto_obj = get_dto(channels)
+        serializer = ChannelSerializer(dto_obj, many=True)
         return Response(serializer.data)
+
     elif request.method == 'POST':
         serializer = ChannelSerializer(data=request.data)
         print(serializer)

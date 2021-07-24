@@ -78,9 +78,11 @@ WSGI_APPLICATION = 'natv.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'natv',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'NAME': 'dap0tnu7sl4jhh',
+        'USER': 'mafuzmxgevezrp',
+        'PASSWORD': '93412302510cc69fbf8441fdbe21d925031936792fcf53277e4145e7efaa9280',
+        'HOST': 'ec2-54-83-82-187.compute-1.amazonaws.com',
+        'PORT': '5432'
     }
 }
 
