@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-=+r$6!uoau@g@h*r@x)&jj=iasc7g0$m*(-$e!vdq-2@*%u!p1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["fierce-springs-88392.herokuapp.com"]
+ALLOWED_HOSTS = ["fierce-springs-88392.herokuapp.com", '127.0.0.1']
 
 
 # Application definition
@@ -77,8 +77,10 @@ WSGI_APPLICATION = 'natv.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'natv',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
     }
 }
 
